@@ -2,10 +2,10 @@
   import { onMount } from 'svelte'
 
   const defaultPlace = {
-    name: 'Ciudad de Guatemala',
+    name: 'Zacapa',
     country: 'Guatemala',
-    latitude: 14.6349,
-    longitude: -90.5069,
+    latitude: 14.9687,
+    longitude: -89.5273,
   }
 
   const descriptions = {
