@@ -1,0 +1,62 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202b3c;
+  background: #f5f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --muted: #718096;
+  --border: #e2e7ee;
+  --blue: #3675c5;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input { font: inherit; }
+a { color: var(--blue); }
+
+.app { width: min(760px, calc(100% - 32px)); min-height: 100vh; margin: 0 auto; padding: 26px 0 20px; }
+header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+.brand { color: #24364d; font-size: 19px; font-weight: 700; text-decoration: none; }
+.search-section { padding: 44px 0 24px; }
+h1 { margin: 0 0 18px; font-size: clamp(25px, 5vw, 34px); letter-spacing: -.04em; }
+form { display: flex; max-width: 500px; gap: 8px; }
+input { flex: 1; min-width: 0; height: 44px; padding: 0 13px; border: 1px solid #dce3ec; border-radius: 8px; background: #fff; color: #24364d; outline: none; }
+input:focus { border-color: #78a5db; box-shadow: 0 0 0 3px #3675c51a; }
+button { min-width: 86px; padding: 0 15px; border: 0; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: .65; cursor: wait; }
+.error { margin: 12px 0 0; color: #a83d36; font-size: 13px; }
+.current { padding: 24px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.current-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.label { margin: 0 0 6px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+h2 { margin: 0; font-size: 18px; }
+.condition { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
+.temperature { margin: 20px 0; color: #24364d; font-size: clamp(58px, 12vw, 78px); font-weight: 600; letter-spacing: -.07em; line-height: 1; }
+.temperature span { margin-left: 5px; color: var(--muted); font-size: 24px; font-weight: 400; letter-spacing: 0; vertical-align: 20px; }
+.details { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-top: 16px; border-top: 1px solid var(--border); }
+.details p { display: flex; gap: 7px; margin: 0; color: var(--muted); font-size: 13px; }
+.details strong { color: #26384f; font-weight: 600; }
+.forecast { margin-top: 27px; }
+.forecast h2 { margin-bottom: 12px; font-size: 17px; }
+.forecast-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+.forecast-day { display: flex; min-height: 105px; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 10px 5px; font-size: 12px; }
+.forecast-day + .forecast-day { border-left: 1px solid var(--border); }
+.forecast-day > span:first-child { color: var(--muted); text-transform: capitalize; }
+.forecast-condition { max-width: 100%; overflow: hidden; color: #65758a; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.forecast-day strong { color: #253950; font-size: 14px; }
+.forecast-day .low { color: #93a0b0; }
+.loading { padding: 35px 0; color: var(--muted); text-align: center; font-size: 14px; }
+footer { margin-top: 26px; color: #8491a2; font-size: 11px; text-align: right; }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 520px) {
+  .app { padding-top: 18px; }
+  .search-section { padding-top: 34px; }
+  .current { padding: 19px; }
+  .current-heading { display: block; }
+  .condition { margin-top: 8px; }
+  .details { gap: 11px 18px; }
+  .forecast-day { min-height: 100px; gap: 6px; }
+  .forecast-condition { font-size: 9px; }
+}
